@@ -1,7 +1,6 @@
 import random
 import prompt
 import math
-from random import choice
 
 
 def main():
@@ -16,7 +15,6 @@ def main():
         number2 = random.randint(0, 50)
         real = math.gcd(number1, number2)
         print(f'Question: {number1} {number2}')
-        print(f'Podskazka: {real}')
         result = prompt.string('Your answer: ')
 
         if int(result) == real:

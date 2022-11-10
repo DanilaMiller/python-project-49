@@ -1,6 +1,5 @@
 import random
 import prompt
-import math
 from random import choice
 
 
@@ -15,23 +14,21 @@ def main():
         random_number = random.randint(1, 10)
         list = [random.randint(1, 10)]
         b = 0
-      
+
         while b < 10:
-          number = list[b] + random_number
-          list.append(number)
-          b += 1
+            number = list[b] + random_number
+            list.append(number)
+            b += 1
         result = choice(list)
-        print(result)
 
         for j in range(len(list)):
-          if list[j] == result:
-            list[j] = '..'
+            if list[j] == result:
+                list[j] = '..'
 
         list_str = ' '.join(map(str, list))
         print(f'Question: {list_str}')
-        print(f'Podskazka: {result}')
         result_by_user = prompt.string('Your answer: ')
-      
+
         if int(result_by_user) == result:
             print("Correct!")
         else:

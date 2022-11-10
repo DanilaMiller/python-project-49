@@ -20,7 +20,6 @@ def main():
             result = 'no'
 
         print(f'Question: {random_number}')
-        print(f'Podskazka: {result}')
         result_by_user = prompt.string('Your answer: ')
 
         if result_by_user == result:
