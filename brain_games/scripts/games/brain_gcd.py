@@ -26,7 +26,7 @@ def main():
 
         i += 1
         if i == 3:
-            print(f'Congratulations {name}!')
+            print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':
