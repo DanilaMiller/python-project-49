@@ -3,10 +3,10 @@ import prompt
 
 
 def main():
-    print(f'Welcome to the Brain Games!')
+    print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print(f'Answer "yes" if the number is even, otherwise answer "no".')
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     i = 0
 
     while i < 3:
@@ -28,7 +28,7 @@ def main():
             print(f"Let's try again, {name}!")
             break
         else:
-            print(f'Wrong input!')
+            print('Wrong input!')
             print(f"Let's try again, {name}!")
             break
 
