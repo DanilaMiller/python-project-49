@@ -1,6 +1,6 @@
 import random
 import prompt
-
+penis
 
 def main():
     print("Welcome to the Brain Games!")
