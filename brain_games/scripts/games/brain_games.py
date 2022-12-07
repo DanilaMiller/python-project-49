@@ -1,11 +1,32 @@
 #!usr/bin/env python3
-from brain_games.cli import welcome_user
+import prompt
+import random
 
 
-def main():
-    print("Welcome to the Brain Games!")
-    welcome_user()
+def welcome_user():
+    global name
+    print('Welcome to the Brain Games!')
+    name = prompt.string('May I have your name? ')
+    print(f'Hello, {name}!')
 
 
-if __name__ == '__main__':
-        main()
+def generate_number():
+    global random_number1
+    global random_number2
+    random_number1 = random.randint(1, 10)
+    random_number2 = random.randint(1, 10)
+
+
+def user_answer():
+    global user_result
+    user_result = prompt.string('Your answer: ')
+    return user_result
+
+
+def congratulations():
+    print(f'Congratulations, {name}!')
+
+
+def wrong_answer(result):
+    print(f"'{user_result}' is wrong answer ;(. Correct answer was '{result}'.")
+    print(f"Let's try again, {name}!")

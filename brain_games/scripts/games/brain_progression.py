@@ -1,19 +1,20 @@
+import brain_games
 import random
-import prompt
 from random import choice
 
 
 def main():
-    welcome_user()
+    brain_games.welcome_user()
     print('What number is missing in the progression?')
+    i = 0
 
     while i < 3:
-        random_number = random.randint(1, 10)
+        brain_games.generate_number()
         list = [random.randint(1, 10)]
         b = 0
 
         while b < 10:
-            number = list[b] + random_number
+            number = list[b] + brain_games.random_number1
             list.append(number)
             b += 1
         result = choice(list)
@@ -24,16 +25,17 @@ def main():
 
         list_str = ' '.join(map(str, list))
         print(f'Question: {list_str}')
-        user_answer()
+        brain_games.user_answer()
 
-        if int(user_result) == result:
+        if int(brain_games.user_result) == result:
             print("Correct!")
         else:
-            wrong_answer()
+            brain_games.wrong_answer()
             break
 
         i += 1
-        congratulations(i)
+        if i == 3:
+            brain_games.congratulations()
 
 
 if __name__ == '__main__':
