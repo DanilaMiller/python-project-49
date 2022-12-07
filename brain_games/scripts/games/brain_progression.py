@@ -30,7 +30,7 @@ def main():
         if int(brain_games.user_result) == result:
             print("Correct!")
         else:
-            brain_games.wrong_answer()
+            brain_games.wrong_answer(result)
             break
 
         i += 1
