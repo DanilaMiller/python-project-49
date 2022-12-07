@@ -1,37 +1,33 @@
 import random
 import prompt
-penis
+
 
 def main():
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
+    welcome_user()
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    i = 0
+
 
     while i < 3:
-        random_number = random.randint(1, 30)
+        generate_number()
         d = 2
-        while d * d <= random_number and random_number % d != 0:
+        while d * d <= random_number1 and random_number1 % d != 0:
             d += 1
-        if d * d > random_number:
+        if d * d > random_number1:
             result = 'yes'
         else:
             result = 'no'
 
-        print(f'Question: {random_number}')
-        result_by_user = prompt.string('Your answer: ')
+        print(f'Question: {random_number1}')
+        user_unswer()
 
-        if result_by_user == result:
+        if user_result == result:
             print("Correct!")
         else:
-            print(f"'{result_by_user}' is wrong answer ;(. Correct answer was '{result}'.")
-            print(f"Let's try again, {name}!")
+            wrong_answer()
             break
 
         i += 1
-        if i == 3:
-            print(f'Congratulations, {name}!')
+        congratulations(i)
 
 
 if __name__ == '__main__':

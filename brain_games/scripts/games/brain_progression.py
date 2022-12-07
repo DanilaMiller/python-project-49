@@ -4,11 +4,8 @@ from random import choice
 
 
 def main():
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
+    welcome_user()
     print('What number is missing in the progression?')
-    i = 0
 
     while i < 3:
         random_number = random.randint(1, 10)
@@ -27,18 +24,16 @@ def main():
 
         list_str = ' '.join(map(str, list))
         print(f'Question: {list_str}')
-        result_by_user = prompt.string('Your answer: ')
+        user_answer()
 
-        if int(result_by_user) == result:
+        if int(user_result) == result:
             print("Correct!")
         else:
-            print(f"'{result_by_user}' is wrong answer ;(. Correct answer was '{result}'.")
-            print(f"Let's try again, {name}!")
+            wrong_answer()
             break
 
         i += 1
-        if i == 3:
-            print(f'Congratulations, {name}!')
+        congratulations(i)
 
 
 if __name__ == '__main__':

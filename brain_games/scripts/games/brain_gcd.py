@@ -4,29 +4,23 @@ import math
 
 
 def main():
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
+    welcome_user()
     print('Find the greatest common divisor of given numbers.')
-    i = 0
 
     while i < 3:
-        number1 = random.randint(0, 50)
-        number2 = random.randint(0, 50)
-        real = math.gcd(number1, number2)
-        print(f'Question: {number1} {number2}')
-        result = prompt.string('Your answer: ')
+        generate_number()
+        result = math.gcd(number1, number2)
+        print(f'Question: {random_number1} {random_number2}')
+        user_unswer()
 
-        if int(result) == real:
+        if int(user_result) == result:
             print("Correct!")
         else:
-            print(f"'{result}' is wrong answer ;(. Correct answer was '{real}'.")
-            print(f"Let's try again, {name}!")
+            wrong_anwer()
             break
 
         i += 1
-        if i == 3:
-            print(f'Congratulations, {name}!')
+        congratulations(i)
 
 
 if __name__ == '__main__':
