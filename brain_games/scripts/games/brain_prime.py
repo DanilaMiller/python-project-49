@@ -1,34 +1,24 @@
 #!usr/bin/env python3
-import brain_main
+import random
+from game_starter import starter
+
+
+def game():
+  random_number1 = random.randint(1, 10)
+  question = f'{random_number1}'
+  d = 2
+  while d * d <= random_number1 and random_number1 % d != 0:
+      d += 1
+  if d * d > random_number1:
+      correct_answer = 'yes'
+  else:
+      correct_answer = 'no'
+  return question, correct_answer
 
 
 def main():
-    brain_main.welcome_user()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    i = 0
-
-    while i < 3:
-        brain_main.generate_number()
-        d = 2
-        while d * d <= brain_main.random_number1 and brain_main.random_number1 % d != 0:
-            d += 1
-        if d * d > brain_main.random_number1:
-            result = 'yes'
-        else:
-            result = 'no'
-
-        print(f'Question: {brain_main.random_number1}')
-        brain_main.user_unswer()
-
-        if brain_main.user_result == result:
-            print("Correct!")
-        else:
-            brain_main.wrong_answer(result)
-            break
-
-        i += 1
-        if i == 3:
-            brain_main.congratulations()
+  condition = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+  starter(game, condition)
 
 
 if __name__ == '__main__':

@@ -1,42 +1,32 @@
 #!usr/bin/env python3
-import brain_main
+from game_starter import starter
 import random
 from random import choice
 
 
+def game():
+  random_number1 = random.randint(1, 10)
+  list = [random.randint(1, 10)]
+  correct_answer = choice(list)
+  b = 0
+  
+  while b < 10:
+      number = list[b] + random_number1
+      list.append(number)
+      b += 1
+
+  for j in range(len(list)):
+      if list[j] == correct_answer:
+          list[j] = '..'
+
+  list_str = ' '.join(map(str, list))
+  question = f'{list_str}'
+  return question, correct_answer
+
+
 def main():
-    brain_main.welcome_user()
-    print('What number is missing in the progression?')
-    i = 0
-
-    while i < 3:
-        brain_main.generate_number()
-        list = [random.randint(1, 10)]
-        b = 0
-
-        while b < 10:
-            number = list[b] + brain_main.random_number1
-            list.append(number)
-            b += 1
-        result = choice(list)
-
-        for j in range(len(list)):
-            if list[j] == result:
-                list[j] = '..'
-
-        list_str = ' '.join(map(str, list))
-        print(f'Question: {list_str}')
-        brain_main.user_answer()
-
-        if int(brain_main.user_result) == result:
-            print("Correct!")
-        else:
-            brain_main.wrong_answer(result)
-            break
-
-        i += 1
-        if i == 3:
-            brain_main.congratulations()
+  condition = 'What number is missing in the progression?'
+  starter(game, condition)
 
 
 if __name__ == '__main__':

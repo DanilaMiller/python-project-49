@@ -1,29 +1,20 @@
 #!usr/bin/env python3
-import brain_main
 import math
+import random
+from game_starter import starter
+
+
+def game():
+  random_number1 = random.randint(1,10)
+  random_number2 = random.randint(1,10)
+  correct_answer = math.gcd(random_number1, random_number2)
+  question = f'{random_number1} {random_number2}'
+  return question, correct_answer
 
 
 def main():
-    brain_main.welcome_user()
-    print('Find the greatest common divisor of given numbers.')
-    i = 0
-
-    while i < 3:
-        brain_main.generate_number()
-        result = math.gcd(brain_main.random_number1, brain_main.random_number2)
-        print(f'Question: {brain_main.random_number1} {brain_main.random_number2}')
-        brain_main.user_answer()
-
-        if int(brain_main.user_result) == result:
-            print("Correct!")
-        else:
-            brain_main.wrong_answer(result)
-            break
-
-        i += 1
-        if i == 3:
-            brain_main.congratulations()
-
+  condition = 'Find the greatest common divisor of given numbers.'
+  starter(game, condition)
 
 if __name__ == '__main__':
     main()
