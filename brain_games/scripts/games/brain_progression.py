@@ -1,5 +1,5 @@
 #!usr/bin/env python3
-from game_starter import starter
+from brain_games.scripts.game_starter import starter
 import random
 from random import choice
 

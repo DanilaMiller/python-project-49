@@ -1,7 +1,7 @@
 #!usr/bin/env python3
 from random import choice
 import random
-from game_starter import starter
+from brain_games.scripts.game_starter import starter
 
 
 def game():
