@@ -13,9 +13,11 @@ def game():
     correct_answer = 'no'
   return question, correct_answer
 
+
 def main():
   condition = 'Answer "yes" if the number is even, otherwise answer "no".'
   starter(game, condition)
+
 
 if __name__ == '__main__':
     main()
