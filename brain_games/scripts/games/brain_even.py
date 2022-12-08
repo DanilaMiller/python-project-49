@@ -4,7 +4,7 @@ from brain_games.scripts.game_starter import starter
 
 
 def game():
-    random_number1 = random.randint(1,10)
+    random_number1 = random.randint(1, 10)
     question = f'{random_number1}'
 
     if random_number1 % 2 == 0:
